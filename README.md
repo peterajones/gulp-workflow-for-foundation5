@@ -278,12 +278,13 @@ If you have followed all of these instructions you will see that the builds/deve
 
 1. You have setup your workstation with global installs of GIT, NODE, RUBY (if on a widows box) and GULP. Optionally you can globally install SASS, COMPASS and BROWSERIFY, if you need them - links are in the README.md file.
 2. You have installed the NPM dependencies by running npm install in the command line.
-You have checked for any updates to the NPM dependencies by running npm-check-updates -u in the command line which downloaded any updates AND updated the package.json file.
-3. You followed the instructions at the top of the gulpfile.js file and ran gulp devSetUp to create the development environment in builds/development/.
-4. You altered the builds/development.index.html and saw your changes in livereload.
-5. You reduced the number of calls to external files.
-6. You added your own .css and .js files for adding your styles/functionality and overrides.
-7.Lastly, you built the production environment where all of your files and images have been minified.
+3. You have checked for any updates to the NPM dependencies by running npm-check-updates -u in the command line which downloaded any updates AND updated the package.json file.
+4. You followed the instructions at the top of the gulpfile.js file and ran gulp devSetUp to create the development environment in builds/development/.
+5. You altered the builds/development.index.html and saw your changes in livereload.
+6. You reduced the number of calls to external files.
+7. You added your own .css and .js files for adding your styles/functionality and overrides.
+8. You learned how to add a slider.
+9.Lastly, you built the production environment where all of your files and images have been minified.
 
 ## Happy coding!
 
