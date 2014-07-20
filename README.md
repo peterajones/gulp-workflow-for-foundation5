@@ -101,7 +101,7 @@ Open your project in a text editor like Sublime text. Navigate to the gulp file.
 If you go the text editor route, place you editor beside your browser for maximum effect and efficiency.
 
 Open up the terminal (or command line prompt) and navigate to your project directory.
-Run this command to install the dependencies: (You may need to add the sudo command on a Mac.)
+Run this command to install the dependencies: (You may need to prepend the sudo command on a Mac.)
 
 <pre>
   [sudo] npm install
