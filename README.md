@@ -176,8 +176,10 @@ The modernizr.js file is not needed in all projects so I will leave it up to you
 Lastly, I will set up a new gulp task to concatenate the two javascript files into a new, unique js file, thus reducing our calls to external files to three.
 
 You will have to do two simple things in this file:
-    
-    builds/development/index.html
+ 
+<pre>
+  builds/development/index.html
+</pre>   
 1. Remove one of the links to the two css files (top of page) and re-name the remaining link to point to css/app.css.
 2. Remove one of the links to the two js files (bottom of page) and re-name the remaining link to point to js/app.js.
 
@@ -214,29 +216,27 @@ Foundation has deprecated the Orbit slider in favour of "Slick - the last carous
 
 If the sample doesn't look right (builds/development/index.html), add this code to the myJS.js file:
 
-  <pre>
-    $(document).ready(function() {
-      $('.autoplay').slick({
-       slidesToShow: 1,
-       slidesToScroll: 1,
-       speed: 2000,
-       autoplay: true,
-       autoplaySpeed: 3000,
-      });
+<pre>
+  $(document).ready(function() {
+    $('.autoplay').slick({
+     slidesToShow: 1,
+     slidesToScroll: 1,
+     speed: 2000,
+     autoplay: true,
+     autoplaySpeed: 3000,
     });
-  </pre>
-
+  });
+</pre>
 To see the slider buttons correctly, you will have to adjust some paths in slick.css. Around line 6, change the path to ajax-loader.gif to:
-  <pre>
-    ../img/ajax-loader.gif
-  </pre>
 
+<pre>
+  ../img/ajax-loader.gif
+</pre>
 and change the path to the fonts ( 5 instances ) around line 25 from fonts/*.* to: 
 
-  <pre>
-    ../fonts/font.ext
-  </pre>
-
+<pre>
+  ../fonts/font.ext
+</pre>
 Check out the feature set <a href="http://kenwheeler.github.io/slick/" title="Feature set">here</a>
 
 ## Moving to Production...
