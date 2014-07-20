@@ -234,7 +234,7 @@ To see the slider buttons correctly, you will have to adjust some paths in slick
 and change the path to the fonts ( 5 instances ) around line 25 from fonts/*.* to: 
 
   <pre>
-    ../fonts/*.*
+    ../fonts/font.ext
   </pre>
 
 Check out the feature set <a href="http://kenwheeler.github.io/slick/" title="Feature set">here</a>
