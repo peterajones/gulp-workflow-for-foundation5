@@ -48,13 +48,7 @@ Install Ruby. if you're on a Mac it's already installed. Not sure?
 Grab a copy of Foundation 5
 
 <pre>
-  http://foundation.zurb.com/
-</pre>
-
-or: <a href="http://bower.io">Install with Bower</a>: 
-
-<pre>
-  bower install zurb/bower-foundation
+  <a href="http://foundation.zurb.com/cdn/releases/foundation-latest.zip">Download the latest release</a>
 </pre>
 
     
