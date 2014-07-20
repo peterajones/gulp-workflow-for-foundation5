@@ -147,9 +147,6 @@ Then run
 This will start the development server.
 
 Point your browser to:
-  <pre>
-    http://localhost:8000
-  </pre>
 
 The rest of the setup instructions should now appear in your browser. For the sake of clarity, I will continue the instructions here.
 
@@ -205,11 +202,29 @@ Just to prove that the myJS.js file will work as well, add
       window.alert('This rocks');
     }; 
     
-to that file. When you save the file, the browser will show an alert message when you click the button.You need to be in the browser for this.
+to that file. When you save the file, the browser will show an alert message when you click the button. You need to be in the browser for this and a refresh might be required.
 
 To add your own styles and functionality, you only have to add it to these two files.
 
 When we move to production, only the two app files will get imported and minified greatly reducing the size of the project.
+
+## Add a slider...
+
+Foundation has deprecated the Orbit slider in favour of "Slick - the last carousel you'll ever need". It is very flexible and great for touch devices as well.
+
+If the sample doesn't look right (builds/development/index.html), add this code to the myJS.js file:
+
+  <pre>
+    $(document).ready(function() {
+      $('.autoplay').slick({
+       slidesToShow: 1,
+       slidesToScroll: 1,
+       speed: 2000,
+       autoplay: true,
+       autoplaySpeed: 3000,
+      });
+    });
+  </pre>
 
 ## Moving to Production...
 
