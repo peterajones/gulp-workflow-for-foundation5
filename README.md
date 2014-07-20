@@ -226,6 +226,19 @@ If the sample doesn't look right (builds/development/index.html), add this code 
     });
   </pre>
 
+To see the slider buttons correctly, you will have to adjust some paths in slick.css. Around line 6, change the path to ajax-loader.gif to:
+  <pre>
+    ../img/ajax-loader.gif
+  </pre>
+
+and change the path to the fonts ( 5 instances ) around line 25 from fonts/*.* to: 
+
+  <pre>
+    ../fonts/*.*
+  </pre>
+
+Check out the feature set <a href="http://kenwheeler.github.io/slick/" title="Feature set">here</a>
+
 ## Moving to Production...
 
 Now that you have modified your web site and are happy with the results, it is time to move it to the production environment. These are the files that you will deploy to the production server. The only files that we are going to move are the essential ones like the
