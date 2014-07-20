@@ -50,6 +50,13 @@ Grab a copy of Foundation 5
 <pre>
   http://foundation.zurb.com/
 </pre>
+
+or: <a href="http://bower.io">Install with Bower</a>: 
+
+<pre>
+  bower install zurb/bower-foundation
+</pre>
+
     
 Clone this repository or download to the desktop
 
