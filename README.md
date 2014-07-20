@@ -85,7 +85,6 @@ You should have a file structure in the root of your project folder that looks l
 |--/img
 |--/js
 |--/slick
-|--.gitignore
 |--gulpfile.js
 |--humans.txt
 |--index.html
