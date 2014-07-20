@@ -300,9 +300,6 @@ To start your development web server to reflect the changes in your browser, go 
 
     gulp dev
     
-If you like this, send me an email: peter at peter-jones.ca
-
-Thanks!
 <br>
 <br>
 <br>
