@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+<html class="no-js" lang="en" >
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Foundation 5</title>
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/foundation.css">
+
+  <script src="js/vendor/modernizr.js"></script>
+
+</head>
+<body>
+  <div class="row">
+      <div class="large-12 columns">
+        <h1>Your project was installed successfully!</h1>
+      </div>
+    </div>
+
+  <div class="row">
+      <div class="large-12 columns">
+        <div class="panel">
+          <h3>Next steps...</h3>
+          <ol>
+            <li>Open <em>this</em> index.html file (not the index.html file in the root directory) in a text editor <code>-> ./builds/development/index.html</code> and make some changes to the <code>h1</code> tag around line 25 and save the file.</li>
+            <li>If you have your browser setup beside your text editor you will automatically see your changes. Pretty cool, huh?</li>
+          </ol>
+          <div class="row">
+            <div class="large-12 columns">
+              <h3>Reduce calls to external files...</h3>
+              <p>If you view the source code, you can see that we are making five calls to external files:
+                <ul>
+                  <li>css/normalize.css</li>
+                  <li>css/foundation.css</li>
+                  <li>js/vendor/modernizr.js</li>
+                  <li>js/vendor/jquery.js</li>
+                  <li>js/foundation.min.js</li>
+                </ul>
+              </p>
+              <p>As you know, the fewer calls to external files the better, so I will set up a new gulp task to concatenate the two css files into one file. We will save minifying the files until we move to the production environment.</p>
+              <p>The modernizr.js file is not needed in all projects so I will leave it up to you whether or not to remove the call to modernizr in this file.</p>
+              <p>Lastly, I will set up a new gulp task to concatenate the two javascript files into a new, unique js file, thus reducing our calls to external files to three.</p>
+              <p>You will have to do two simple things in this file: <code>builds/development/index.html</code>
+                <ul>
+                  <li>Remove one of the links to the two css files and re-name the remaining link to point to <code>css/app.css</code>.</li>
+                  <li>Remove one of the links to the two js files and re-name the remaining link to point to <code>js/app.js</code>.</li>
+                </ul>
+              </p>
+              <p>Like I said before, its up to you what to do with the call to modernizr.js.</p>
+              <p>Save your changes. You won't notice any difference in the browser, but what has happened here is that the two css files have been merged into one file named 'app.css' and the two js files have been merged into one file named 'app.js'. Two calls instead of four!</p>
+               
+              <h3>CSS &amp; JS overrides...</h3>
+              <p>To make your life easier (so you don't have to mess with Foundation's CSS or the JS files), just create two new files called 'myCSS.css' and 'myJS.js' and put them in <code>builds/development/css</code> and <code>builds/development/js</code> respectively. Now you can tweak your project using these two new files as they will be appended to the app.css and app.js files. Once you have done this, try adding<br> <code>body {<br>&nbsp;background: rgba(0, 198, 255, 0.13);<br>}</code><br> to your myCSS.css file. Hit save and checkout the new background colour.</p>
+              <p>Just to prove that the myJS.js file will work as well, add <br><code>function myFunction() {<br>&nbsp; window.alert('This rocks'); <br>};</code><br> to that file. When you save the file, the browser will show an alert message when you click the button.  <button class='button tiny' onclick="myFunction()">Try it</button></p>
+              <p>Just to be extra fast, remove the script block at the end of the <code>builds/development/index.html</code> that contains:<br><code>$(document).foundation();</code><br> from the index.html file and add this to the myJS.js file:<br> <code>$(document).foundation();</code><br> This will add the code to the app.js file. Inline scripts can slow down your site.</p>
+              <p>To add your own styles and functionality or overrides, you only have to modify these two files.</p>
+              <p>When we move to production, only the two app files will get imported and minified greatly reducing the size of the project.</p>
+              <div class="row">
+                <div class="small-12 large-6 columns">
+                  <h3>Add a slider...</h3>
+                  <p>Foundation has deprecated the Orbit slider in favour of "Slick - the last carousel you'll ever need". It is very flexible and great for touch devices as well.</p>
+                  <p>To the right is a sample to get you started. Doesn't look right?</p>
+                  <p>Add this code to the myJS.js file:</p>
+                  <p></p><code>$(document).ready(function() {<br>&nbsp;
+                          $('.autoplay').slick({<br>&nbsp;&nbsp;
+                            slidesToShow: 1,<br>&nbsp;&nbsp;
+                            slidesToScroll: 1,<br>&nbsp;&nbsp;
+                            speed: 2000,<br>&nbsp;&nbsp;
+                            autoplay: true,<br>&nbsp;&nbsp;
+                            autoplaySpeed: 3000,<br>&nbsp;
+                          });<br>
+                        });
+                  </code></p>
+                  <p>Get <a href="http://kenwheeler.github.io/slick/" title="Get Slick">Slick</a></p>
+                </div>
+                <div class="small-12 large-6 columns">
+                  <div class="slider autoplay">
+                    <div><img src="img/img_1.jpg" alt="img 1" /></div>
+                    <div><img src="img/img_2.jpg" alt="img 2" /></div>
+                    <div><img src="img/img_3.jpg" alt="img 3" /></div>
+                    <div><img src="img/img_4.jpg" alt="img 4" /></div>
+                    <div><img src="img/img_5.jpg" alt="img 5" /></div>
+                  </div>
+                  <p>To see the slider buttons correctly, you will have to adjust some paths in slick.css. Around line 6, change the path to ajax-loader.gif to: <br><code>../img/ajax-loader.gif</code><br> and change the path to the fonts around line 25 from fonts/*.* to: <br><code>../fonts/*.*</code> ( 5 instances )<br></p>
+                </div>
+              </div>
+              <h3>Moving to Production...</h3>
+              <p>Now that you have modified your web site and are happy with the results, it is time to move it to the production environment. These are the files that you will deploy to the production server. The only files that we are going to move are the essential ones like the <code>.html, .css, .js, .txt</code> and the image assets. These files will be minified, uglified or compressed as needed. The point is to make the smallest and fastest loading web site possible.</p>
+              <p>There is only one command to run to achieve this.</p>
+              <p>Back in the command line, quit the previous proccess if it is still running by typing <code>ctrl + C</code> and then type <br><code>NODE_ENV=production gulp prod</code><br> and hit the enter key.</p>
+              <p>Once you run this command, all of the necessary files will be built to your <code>builds/production/</code> directory (which doesn't even exist yet until you run this command!)</p>
+              <p>This workflow has started a new web server in <code>builds/production</code>. If you look at the source code you will see a minified version of the HTML. A quick look at the app.css or app.js files you can verify that the same thing has happened. Good luck editing any of those files!</p>
+              <h3>So what's the Point?</h3>
+              <p>The point is making your web site fast! Check out how big your <code>builds/development/</code>directory is, and compare it to your <code>builds/production/ </code>directory.</p>
+              <p>If you have followed all of these instructions you will see that the <code>builds/development/</code> directory is ~ 1.6MB on disk compared to the <code>builds/production/</code> directory which weighs in at ~ 705 KB on disk. That's a savings of more than 60% to the size of your site when it goes to the production server! of course your mileage will vary depending on the assets you add to the project, but the point is well made that you will save big time in the end.</p>
+             
+              <h3>Summary</h3>
+              <ol>
+                <li>You have setup your workstation with global installs of GIT, NODE, RUBY (if on a widows box) and GULP. Optionally you can globally intall SASS, COMPASS and BROWSERIFY, if you need them - links are in the README.md file.</li>
+                <li>You have installed the NPM dependencies by running <code>npm install</code> in the command line.</li>
+                <li>You have checked for any updates to the NPM dependencies by running <code>npm-check-updates -u</code> in the command line which downloaded any updates AND updated the <code>package.json</code> file.</li>
+                <li>You followed the instructions at the top of the <code>gulpfile.js</code> file and ran <code>gulp devSetUp</code> to create the development environment in <code>builds/development/ </code>.</li>
+                <li>You altered the <code>builds/development.index.html</code> and saw your changes in livereload.</li>
+                <li>You reduced the number of calls to external files.</li>
+                <li>You added your own .css and .js files for adding your styles/functionality and overrides.</li>
+                <li>You learned how to add a slider.</li>
+                <li>Lastly, you built the production environment where all of your files and images have been minified.</li>
+              </ol>
+            </div>
+          </div>
+          <div class="row">
+            <div class="large-12 columns">
+              <p>Once you've exhausted the fun in this document, you should check out:</p>
+            </div>
+            </div>
+            <div class="row">
+              <div class="large-6 medium-6 columns">
+            <p><a href="http://foundation.zurb.com/docs">Foundation Documentation</a><br />Everything you need to know about using the framework.</p>
+          </div>
+            <div class="large-6 medium-6 columns">
+              <p><a href="http://github.com/zurb/foundation">Foundation on Github</a><br />Latest code, issue reports, feature requests and more.</p>
+            </div>
+            <div class="large-12 columns">
+              <h3>Happy coding!</h3>
+              <p>Now it's time to start working on your Foundation 5 project.</p>
+            </div>       
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <script src="js/vendor/jquery.js"></script>
+  <script src="js/foundation.min.js"></script>
+  <script>
+    $(document).foundation();
+  </script>
+</body>
+</html>

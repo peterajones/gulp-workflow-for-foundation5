@@ -1,0 +1,10 @@
+.DS_Store
+.tmp
+node_modules
+.sass-cache
+work-files
+builds
+css
+js
+humans.txt
+robots.txt
