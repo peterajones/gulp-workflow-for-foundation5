@@ -122,22 +122,13 @@ This will download any new dependencies and upgrade the 'package.json' file auto
 
 This is where you will be doing your project development.
 
-1. Run this command from the terminal to build the development environment:
+Run this command from the terminal to build the development environment:
 
 <pre>
   gulp devSetUp
 </pre>
 
-This will create a ''builds' folder in the root directory and inside there will be a 
-'development' directory which is where you will do your work.
-
-2. Point your browser to:
-
-<pre>
-  http://localhost:8080
-</pre>
-
-The rest of the setup instructions should now appear in your browser. For the sake of clarity, I will continue the instructions here.
+This will create a ''builds' folder in the root directory and inside there will be a 'development' directory which is where you will do your work.
 
 ## Next steps...
 
@@ -153,9 +144,16 @@ Then run
   gulp dev
 </pre>
     
-  This will start the development server.
+This will start the development server.
 
-  Open this index.html file (not the index.html file in the root directory) in a text editor
+Point your browser to:
+  <pre>
+    http://localhost:8000
+  </pre>
+
+The rest of the setup instructions should now appear in your browser. For the sake of clarity, I will continue the instructions here.
+
+Open this index.html file (not the index.html file in the root directory) in a text editor
 
 <pre>
   ./builds/development/index.html
