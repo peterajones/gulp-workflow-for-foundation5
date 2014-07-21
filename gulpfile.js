@@ -155,7 +155,7 @@ jsSources = [
 imgSources = [
 	outputDir + 'img/**/*.*'];
 phpSources = [outputDir + '*.php'];
-slickSources = [outputDir + '']
+slickSources = [outputDir + ''];
 txtSources = [outputDir + '*.txt'];
 fontSources = [outputDir + 'fonts/*.*'];
 
